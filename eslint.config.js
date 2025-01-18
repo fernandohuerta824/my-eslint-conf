@@ -68,7 +68,6 @@ export default [
       ],
       'no-trailing-spaces': 'error', // Prohibir espacios al final de las líneas
       'lines-between-class-members': ['error', 'always'], // Requerir líneas en blanco entre miembros de una clase
-      'linebreak-style': ['error', 'unix'], // Usar el estilo UNIX de saltos de línea (\n)
       'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }], // Limita el uso de líneas vacías consecutivas.
       'curly': ['error', 'all'], // Requerir llaves en bloques de código (incluso si son opcionales)
       'eqeqeq': ['error', 'always'] , // Requerir el uso de '===' y '!==' en lugar de '==' y '!=',
