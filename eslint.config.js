@@ -77,6 +77,23 @@ export default [
       // Reglas específicas para React
       'react/jsx-no-target-blank': 'off', // Desactivar la advertencia para 'target="_blank"' sin 'rel="noopener noreferrer"'
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }], // Advertencia si se exporta algo que no es un componente de React cuando se usa React Fast Refresh
+      'import/no-unresolved': 'error', // Prohibir importaciones que no se puedan resolver
+      'import/named': 'error', // Requiere que las importaciones de miembros sean válidas
+      'import/default': 'error', // Asegura que las importaciones por defecto sean válidas
+      'import/namespace': 'error', // Requiere que las importaciones de espacio de nombres sean válidas
+      'import/no-absolute-path': 'error', // Prohibir las importaciones con rutas absolutas
+      'import/no-dynamic-require': 'error', // Prohibir el uso de require() dinámico
+      'import/no-cycle': 'warn', // Detecta ciclos de dependencias
+      'import/no-self-import': 'error', // Evitar la auto-importación (importarse a sí mismo)
+      'import/order': ['error', { // Ordenar las importaciones
+        'groups': [
+          ['builtin', 'external'],  // Primero las importaciones de módulos internos y luego los módulos externos
+          ['internal'], // Luego las importaciones internas
+          ['sibling', 'parent'], // Después las importaciones de los archivos hermanos y padres
+          ['index'], // Y finalmente las importaciones de archivos de índice
+        ],
+        'newlines-between': 'always', // Requiere saltos de línea entre las importaciones de diferentes grupos
+      }],
     }
     
   },
