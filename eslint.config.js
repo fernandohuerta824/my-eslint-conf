@@ -58,7 +58,7 @@ export default [
       'space-infix-ops': 'error', // Requerir espacios alrededor de los operadores infijos (e.g., a + b)
       'no-multi-spaces': 'error', // Prohibir múltiples espacios innecesarios
       'key-spacing': ['error', { beforeColon: false, afterColon: true }], // Requerir espacio después de los dos puntos en objetos
-      'indent': ['error', 2], // Usar 2 espacios para la indentación
+      'indent': ['error', 4], // Usar 4 espacios para la indentación
       'eol-last': ['error', 'always'], // Requerir salto de línea al final de cada archivo
       'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }], // Exigir saltos de línea entre llamadas encadenadas (excepto cuando la cadena tiene profundidad 2)
       'padding-line-between-statements': [
@@ -69,7 +69,11 @@ export default [
       'no-trailing-spaces': 'error', // Prohibir espacios al final de las líneas
       'lines-between-class-members': ['error', 'always'], // Requerir líneas en blanco entre miembros de una clase
       'linebreak-style': ['error', 'unix'], // Usar el estilo UNIX de saltos de línea (\n)
-    
+      'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }], // Limita el uso de líneas vacías consecutivas.
+      'curly': ['error', 'all'], // Requerir llaves en bloques de código (incluso si son opcionales)
+      'eqeqeq': ['error', 'always'] , // Requerir el uso de '===' y '!==' en lugar de '==' y '!=',
+      'default-case': 'warn', // Advertencia si no hay una cláusula 'default' en las sentencias 'switch'
+      
       // Manejo de errores
       'no-console': 'warn', // Advertencia por uso de 'console.log' y similares
       'no-debugger': 'warn', // Advertencia por uso de 'debugger'
