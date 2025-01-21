@@ -3,13 +3,13 @@ import globals from 'globals'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import promise from 'eslint-plugin-promise' // Asegúrate de importar el plug
+import promise from 'eslint-plugin-promise'
 import importPlugin from 'eslint-plugin-import'
 
 export default [
   { ignores: ['dist'] },
   {
-    files: ['src/*.{js,jsx}'],
+    files: ['src/**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -38,7 +38,7 @@ export default [
       ...promise.configs['flat/recommended'].rules,
     
       // Variables
-      'no-unused-vars': ['warn', { args: 'none', ignoreRestSiblings: true }], // Advertencia por variables no utilizadas, pero sin chequear los argumentos de funciones y con desestructuración
+      'no-unused-vars': ['warn', { args: 'all', ignoreRestSiblings: true }], // Advertencia por variables no utilizadas, pero sin chequear los argumentos de funciones y con desestructuración
     
       // Mejoras generales
       'no-var': 'error', // Prohibir el uso de 'var', usar 'let' o 'const' en su lugar
@@ -48,7 +48,7 @@ export default [
       'arrow-spacing': ['error', { before: true, after: true }], // Requiere espacios alrededor de la flecha en funciones flecha (e.g., (a) => {})
       'no-useless-rename': 'error', // Prohibir cambios de nombres innecesarios de variables
       'no-duplicate-imports': 'error', // Prohibir importaciones duplicadas
-    
+      'object-curly-spacing': ['error', 'always'],
       // Estilo de código
       'semi': ['error', 'never'], // Prohibir punto y coma al final de las sentencias
       'quotes': ['error', 'single', { avoidEscape: true }], // Usar comillas simples para cadenas de texto, a menos que se necesiten comillas dobles para evitar escapar
