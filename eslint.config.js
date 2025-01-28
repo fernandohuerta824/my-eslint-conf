@@ -38,7 +38,14 @@ export default [
       ...promise.configs['flat/recommended'].rules,
     
       // Variables
-      'no-unused-vars': ['warn', { args: 'all', ignoreRestSiblings: true }], // Advertencia por variables no utilizadas, pero sin chequear los argumentos de funciones y con desestructuración
+      'no-unused-vars': ['warn', { 
+        vars: 'all', 
+        args: 'all', 
+        ignoreRestSiblings: true,
+        varsIgnorePattern: '^_', // Ignorar variables que comiencen con _
+        argsIgnorePattern: '^_' // Ignorar argumentos que comiencen con _
+      }],
+    // Advertencia por variables no utilizadas, pero sin chequear los argumentos de funciones y con desestructuración
     
       // Mejoras generales
       'no-var': 'error', // Prohibir el uso de 'var', usar 'let' o 'const' en su lugar
